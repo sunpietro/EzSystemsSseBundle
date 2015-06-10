@@ -1,0 +1,4 @@
+ez_systems_sse_homepage:
+    path:     /sse
+    defaults: { _controller: EzSystemsSseBundle:Sse:index }
+

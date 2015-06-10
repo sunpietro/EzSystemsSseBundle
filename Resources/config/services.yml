@@ -1,0 +1,10 @@
+services:
+    ez_systems_sse.pheanstalk:
+        class: Pheanstalk\Pheanstalk
+        arguments: ['127.0.0.1']
+
+    ez_systems_sse.signal_subscriber:
+        class: EzSystems\SseBundle\Subscriber\SignalSubscriber
+        arguments: [@ez_systems_sse.pheanstalk, @ezpublish.api.service.content]
+        tags:
+            - { name: kernel.event_subscriber }
